@@ -1,0 +1,11 @@
+{
+  "dataset_version": "synthetic-workshop-v1",
+  "source_kind": "synthetic",
+  "source_repository": "https://github.com/chancehl/JeopardyQuestions",
+  "source_revision": null,
+  "source_sha256": null,
+  "source_record_count": 6,
+  "output_record_count": 6,
+  "selection_rule": "Hand-authored fictional records matching the upstream combined.json schema",
+  "redistribution_note": "Contains no clue text copied from the upstream dataset"
+}

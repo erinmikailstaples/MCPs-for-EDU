@@ -1,0 +1,20 @@
+{
+  "servers": {
+    "jeopardy-basics": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--locked",
+        "--directory",
+        "${workspaceFolder}",
+        "python",
+        "-m",
+        "jeopardy_template.mcp_server"
+      ],
+      "env": {
+        "JEOPARDY_API_BASE_URL": "http://127.0.0.1:8000"
+      }
+    }
+  }
+}

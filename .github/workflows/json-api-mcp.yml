@@ -1,0 +1,39 @@
+name: JSON API MCP
+
+on:
+  push:
+    paths:
+      - "JSON-API-MCP/**"
+      - ".github/workflows/json-api-mcp.yml"
+  pull_request:
+    paths:
+      - "JSON-API-MCP/**"
+      - ".github/workflows/json-api-mcp.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: JSON-API-MCP
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --locked
+      - run: uv run --locked ruff check .
+      - run: uv run --locked pytest
+      - name: Protocol smoke test
+        run: |
+          uv run --locked uvicorn jeopardy_template.api:app --host 127.0.0.1 --port 8000 >api.log 2>&1 &
+          API_PID=$!
+          trap 'kill "$API_PID"' EXIT
+          for attempt in {1..20}; do
+            curl --fail --silent http://127.0.0.1:8000/health && break
+            sleep 0.5
+          done
+          uv run --locked python scripts/smoke_test.py

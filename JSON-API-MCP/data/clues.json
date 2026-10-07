@@ -1,0 +1,56 @@
+[
+  {
+    "id": 0,
+    "prompt": "This protocol lets AI applications discover and call external tools",
+    "answer": "What is MCP?",
+    "category": "DEVELOPER TOOLS",
+    "round": "Jeopardy",
+    "value": 200,
+    "gameId": 1001
+  },
+  {
+    "id": 1,
+    "prompt": "This Python framework generates an OpenAPI schema from type hints",
+    "answer": "What is FastAPI?",
+    "category": "PYTHON",
+    "round": "Jeopardy",
+    "value": 400,
+    "gameId": 1001
+  },
+  {
+    "id": 2,
+    "prompt": "This package manager uses a lockfile named uv.lock",
+    "answer": "What is uv?",
+    "category": "DEVELOPER TOOLS",
+    "round": "DoubleJeopardy",
+    "value": 800,
+    "gameId": 1001
+  },
+  {
+    "id": 3,
+    "prompt": "In an MCP stdio server, reserve this stream for protocol messages",
+    "answer": "What is standard output?",
+    "category": "DEVELOPER TOOLS",
+    "round": "DoubleJeopardy",
+    "value": 1200,
+    "gameId": 1002
+  },
+  {
+    "id": 4,
+    "prompt": "This JSON value represents the board value of a Final Jeopardy clue",
+    "answer": "What is null?",
+    "category": "DATA MODELING",
+    "round": "FinalJeopardy",
+    "value": null,
+    "gameId": 1002
+  },
+  {
+    "id": 5,
+    "prompt": "This HTTP status means a requested clue ID was not found",
+    "answer": "What is 404?",
+    "category": "WEB APIS",
+    "round": "Jeopardy",
+    "value": 600,
+    "gameId": 1003
+  }
+]
