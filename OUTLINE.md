@@ -102,7 +102,7 @@
 - Where this sits next to GitHub's own layers: instructions files are for how *your team* works, the AI Guide is for how *the product* is meant to be used. They compose. House rules versus the instruction manual. The reference repo ships both so attendees can see the split instead of taking my word for it.
 - Guardrails angle (secondary theme): VS Code asks for confirmation on tool calls, servers are scoped to what you expose, and every call is visible in the chat. Designing the guide well is also designing the guardrails. Opinionated defaults are seatbelts you don't have to remember to fasten.
 
-## 6. Hands-on 1: install and run the reference server in Copilot (8 min)
+## 6. Hands-on 1: install and run the reference server in Copilot (8 min) 
 
 - Goal: every attendee has the reference server running in Copilot agent mode. This is the part where it stops being my talk and starts being your afternoon.
 - Steps on screen, also in the repo README:
