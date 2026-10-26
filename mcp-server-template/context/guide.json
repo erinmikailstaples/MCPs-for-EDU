@@ -1,0 +1,38 @@
+{
+  "product_name": "Your Product",
+  "tasks": [
+    {
+      "id": "deploy",
+      "title": "Choose the next deployment step",
+      "when_to_use": "A developer asks where to deploy a change or proposes a first production release.",
+      "default_choice": "preview",
+      "avoid": "Treating a successful build as proof that a change was verified outside production.",
+      "example_request": "Recommend my next deployment step and explain why.",
+      "example_behavior": "Use the configured default unless the developer makes a valid explicit choice. Ask about missing requirements before recommending a restricted choice.",
+      "choices": [
+        {
+          "id": "preview",
+          "recommendation": "Try the change in an isolated preview environment.",
+          "rationale": "A preview lets you inspect the change before exposing it to users.",
+          "requires": []
+        },
+        {
+          "id": "staging",
+          "recommendation": "Try the change in your team's staging environment.",
+          "rationale": "Staging provides a shared nonproduction place to check integration behavior.",
+          "requires": []
+        },
+        {
+          "id": "production",
+          "recommendation": "Consider production next, following your team's release requirements.",
+          "rationale": "The developer explicitly selected production and confirmed nonproduction verification; this tool does not independently validate that claim.",
+          "requires": ["verified_nonproduction"]
+        }
+      ],
+      "fact_questions": {
+        "verified_nonproduction": "Has this change been verified in a nonproduction environment?"
+      },
+      "references": ["product.md"]
+    }
+  ]
+}

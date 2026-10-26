@@ -1,12 +1,12 @@
-# Workshop Tutorial: From API Access to an AI Guide
+# Optional Background Tutorial From API Access to an AI Guide
 
 ## Goodbye, Tutorial Hell: AI Guides and the New Documentation Layer
 
-This tutorial supports the full GitHub Universe talk. Attendees first build a correct JSON → FastAPI → MCP pipeline, then use its limitations to discover why an MCP server that merely mirrors an API is not automatically a good learning experience.
+The hands-on session begins with the [root quickstart](README.md#start-in-your-editor), [guidance edit exercise](EXERCISE.md), and [deployment takeaway](TAKEAWAY.md). This optional background tutorial explains the JSON → FastAPI → MCP pipeline that already exists in the scaffold and the design choices behind the guide.
 
 The thin server is intentional. It is the control group.
 
-By the end, attendees should be able to explain and demonstrate the difference between:
+By the end, readers should be able to explain and demonstrate the difference between:
 
 - giving an agent access to data and operations; and
 - giving an agent enough product judgment to help someone make a good decision.
@@ -187,6 +187,10 @@ Ask the room:
 The likely sources are support macros, onboarding advice, documentation warnings, code-review comments, and experienced teammates. Those are the raw materials for an AI Guide.
 
 ## Chapter 5: redesign around the learning task
+
+The implemented guide is in [`guide_server.py`](JSON-API-MCP/src/jeopardy_template/guide_server.py), with validated content in [`content/`](JSON-API-MCP/content). Its actual practice signature uses `category`, optional `clue_count`, and `difficulty` (`beginner` or `advanced`); answers are revealed through a separate explicit tool. The sketch below explains the design progression rather than specifying the shipped interface.
+
+The [pg-aiguide lessons](EXECUTION_PLAN.md#what-we-learned-about-developer-education-from-pg-aiguide) provide the design rationale for this chapter: combine reference material with applicable judgment, state conditions and exceptions, and check whether the learner can explain and transfer the recommendation.
 
 Do not add more endpoint-shaped tools. Create a second server so the original wrapper remains a fair control.
 

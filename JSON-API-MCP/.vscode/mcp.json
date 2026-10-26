@@ -10,11 +10,10 @@
         "${workspaceFolder}",
         "python",
         "-m",
-        "jeopardy_template.mcp_server"
-      ],
-      "env": {
-        "JEOPARDY_API_BASE_URL": "http://127.0.0.1:8000"
-      }
+        "jeopardy_template.launcher",
+        "--server",
+        "wrapper"
+      ]
     }
   }
 }

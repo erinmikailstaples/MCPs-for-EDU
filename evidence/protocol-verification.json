@@ -1,0 +1,262 @@
+{
+  "verified_at": "2026-10-26T15:38:04.634127+00:00",
+  "python_version": "3.14.7",
+  "implementation_revision": "07bea5e02de4a4652b1f6b6d3d6e68b0902c0c142aa8175b171864284324e157",
+  "scope": "Real stdio MCP clients and local HTTP API; no editor or model evaluated",
+  "practice_before": {
+    "items": [
+      {
+        "id": 0,
+        "prompt": "This protocol lets AI applications discover and call external tools",
+        "category": "DEVELOPER TOOLS",
+        "value": 200
+      },
+      {
+        "id": 2,
+        "prompt": "This package manager uses a lockfile named uv.lock",
+        "category": "DEVELOPER TOOLS",
+        "value": 800
+      }
+    ],
+    "requested_count": 2,
+    "returned_count": 2,
+    "recommendation": "Start with 2 clues using the documented default; keep answers hidden.",
+    "selection_note": "Ordered by lower board value as a rough difficulty proxy, not a measure of conceptual difficulty. Clues with no fixed board value are placed last.",
+    "shortage": false,
+    "dataset_version": "synthetic-workshop-v1",
+    "guidance": [
+      {
+        "rule_id": "practice.default_count",
+        "source": "content/practice.json",
+        "source_field": "/rules/0/value",
+        "content_revision": "f8f87b64854c759ab7b9f63028319e6c2114d897ff2a05d1f876e63d76d77cdd",
+        "mechanism": "default",
+        "decision_basis": "default",
+        "configured_value": 2,
+        "applied_value": 2,
+        "recommendation": "Start with 2 clues when the learner does not specify a count.",
+        "rationale": "A short round leaves time to review mistakes before continuing.",
+        "applies_when": "The learner requests a practice round without a count.",
+        "exceptions": [
+          "Honor an explicit count from 1 to 10; disclose when fewer matching clues exist."
+        ]
+      },
+      {
+        "rule_id": "practice.answer_visibility",
+        "source": "content/practice.json",
+        "source_field": "/rules/1/value",
+        "content_revision": "f8f87b64854c759ab7b9f63028319e6c2114d897ff2a05d1f876e63d76d77cdd",
+        "mechanism": "constraint",
+        "decision_basis": "constraint",
+        "configured_value": "on_request",
+        "applied_value": "on_request",
+        "recommendation": "Keep answers out of practice results; reveal a specific answer only when asked.",
+        "rationale": "The learner needs an opportunity to attempt the clue before seeing its answer.",
+        "applies_when": "Building any practice set.",
+        "exceptions": [
+          "Use reveal_answer when the learner explicitly asks for an answer."
+        ]
+      },
+      {
+        "rule_id": "practice.difficulty",
+        "source": "content/practice.json",
+        "source_field": "/rules/2/value",
+        "content_revision": "f8f87b64854c759ab7b9f63028319e6c2114d897ff2a05d1f876e63d76d77cdd",
+        "mechanism": "advisory",
+        "decision_basis": "advisory",
+        "configured_value": "board_value_proxy",
+        "applied_value": "beginner",
+        "recommendation": "Use lower board values first for beginner practice and higher values first for advanced practice, while disclosing this rough proxy.",
+        "rationale": "Board value provides a reproducible ordering, but does not measure universal conceptual difficulty or the learner's knowledge.",
+        "applies_when": "Choosing a progression within the matching clues.",
+        "exceptions": [
+          "Ask about the learner's topic or goal when they require conceptual difficulty; Final Jeopardy has no fixed board value and is placed last."
+        ]
+      }
+    ],
+    "next_action": "Try a clue, then explicitly ask to reveal its answer using its ID."
+  },
+  "practice_after": {
+    "items": [
+      {
+        "id": 0,
+        "prompt": "This protocol lets AI applications discover and call external tools",
+        "category": "DEVELOPER TOOLS",
+        "value": 200
+      },
+      {
+        "id": 2,
+        "prompt": "This package manager uses a lockfile named uv.lock",
+        "category": "DEVELOPER TOOLS",
+        "value": 800
+      },
+      {
+        "id": 3,
+        "prompt": "In an MCP stdio server, reserve this stream for protocol messages",
+        "category": "DEVELOPER TOOLS",
+        "value": 1200
+      }
+    ],
+    "requested_count": 3,
+    "returned_count": 3,
+    "recommendation": "Start with 3 clues using the documented default; keep answers hidden.",
+    "selection_note": "Ordered by lower board value as a rough difficulty proxy, not a measure of conceptual difficulty. Clues with no fixed board value are placed last.",
+    "shortage": false,
+    "dataset_version": "synthetic-workshop-v1",
+    "guidance": [
+      {
+        "rule_id": "practice.default_count",
+        "source": "content/practice.json",
+        "source_field": "/rules/0/value",
+        "content_revision": "f88213b4cc51b1f9e190faab8fff4463f4c211a16a7d2031206ab8d277564d8a",
+        "mechanism": "default",
+        "decision_basis": "default",
+        "configured_value": 3,
+        "applied_value": 3,
+        "recommendation": "Start with 3 clues when the learner does not specify a count.",
+        "rationale": "A short round leaves time to review mistakes before continuing.",
+        "applies_when": "The learner requests a practice round without a count.",
+        "exceptions": [
+          "Honor an explicit count from 1 to 10; disclose when fewer matching clues exist."
+        ]
+      },
+      {
+        "rule_id": "practice.answer_visibility",
+        "source": "content/practice.json",
+        "source_field": "/rules/1/value",
+        "content_revision": "f88213b4cc51b1f9e190faab8fff4463f4c211a16a7d2031206ab8d277564d8a",
+        "mechanism": "constraint",
+        "decision_basis": "constraint",
+        "configured_value": "on_request",
+        "applied_value": "on_request",
+        "recommendation": "Keep answers out of practice results; reveal a specific answer only when asked.",
+        "rationale": "The learner needs an opportunity to attempt the clue before seeing its answer.",
+        "applies_when": "Building any practice set.",
+        "exceptions": [
+          "Use reveal_answer when the learner explicitly asks for an answer."
+        ]
+      },
+      {
+        "rule_id": "practice.difficulty",
+        "source": "content/practice.json",
+        "source_field": "/rules/2/value",
+        "content_revision": "f88213b4cc51b1f9e190faab8fff4463f4c211a16a7d2031206ab8d277564d8a",
+        "mechanism": "advisory",
+        "decision_basis": "advisory",
+        "configured_value": "board_value_proxy",
+        "applied_value": "beginner",
+        "recommendation": "Use lower board values first for beginner practice and higher values first for advanced practice, while disclosing this rough proxy.",
+        "rationale": "Board value provides a reproducible ordering, but does not measure universal conceptual difficulty or the learner's knowledge.",
+        "applies_when": "Choosing a progression within the matching clues.",
+        "exceptions": [
+          "Ask about the learner's topic or goal when they require conceptual difficulty; Final Jeopardy has no fixed board value and is placed last."
+        ]
+      }
+    ],
+    "next_action": "Try a clue, then explicitly ask to reveal its answer using its ID."
+  },
+  "deployment_before": {
+    "requested_target": null,
+    "recommended_target": "preview",
+    "recommendation": "Use preview as the next deployment step.",
+    "question": null,
+    "guidance": [
+      {
+        "rule_id": "deployment.default_environment",
+        "source": "content/deployment.json",
+        "source_field": "/rules/0/value",
+        "content_revision": "2a4f4f0b8be5965f5b88d0b54a68b28c7948f18f33d27f8a94c62366658724e3",
+        "mechanism": "default",
+        "decision_basis": "default",
+        "configured_value": "preview",
+        "applied_value": "preview",
+        "recommendation": "Recommend preview when the developer has not selected an environment.",
+        "rationale": "A nonproduction release lets the developer inspect behavior before exposing a change to users.",
+        "applies_when": "The developer has not specified a deployment target, or production readiness is unconfirmed.",
+        "exceptions": [
+          "Honor an explicit preview or staging target; a production recommendation also requires confirmed nonproduction verification."
+        ]
+      }
+    ],
+    "next_action": "Verify behavior here and follow your team's release checks.",
+    "executes_deployment": false
+  },
+  "deployment_after": {
+    "requested_target": null,
+    "recommended_target": "staging",
+    "recommendation": "Use staging as the next deployment step.",
+    "question": null,
+    "guidance": [
+      {
+        "rule_id": "deployment.default_environment",
+        "source": "content/deployment.json",
+        "source_field": "/rules/0/value",
+        "content_revision": "c0bd76810c315ed7e98e2c8eccc5256f51f2a6b7757ca8e73d082a1d68938c87",
+        "mechanism": "default",
+        "decision_basis": "default",
+        "configured_value": "staging",
+        "applied_value": "staging",
+        "recommendation": "Recommend staging when the developer has not selected an environment.",
+        "rationale": "A nonproduction release lets the developer inspect behavior before exposing a change to users.",
+        "applies_when": "The developer has not specified a deployment target, or production readiness is unconfirmed.",
+        "exceptions": [
+          "Honor an explicit preview or staging target; a production recommendation also requires confirmed nonproduction verification."
+        ]
+      }
+    ],
+    "next_action": "Verify behavior here and follow your team's release checks.",
+    "executes_deployment": false
+  },
+  "production_question": {
+    "requested_target": "production",
+    "recommended_target": "staging",
+    "recommendation": "Use staging as the next deployment step.",
+    "question": "Has this change been verified in a nonproduction environment?",
+    "guidance": [
+      {
+        "rule_id": "deployment.default_environment",
+        "source": "content/deployment.json",
+        "source_field": "/rules/0/value",
+        "content_revision": "c0bd76810c315ed7e98e2c8eccc5256f51f2a6b7757ca8e73d082a1d68938c87",
+        "mechanism": "default",
+        "decision_basis": "default",
+        "configured_value": "staging",
+        "applied_value": "staging",
+        "recommendation": "Recommend staging when the developer has not selected an environment.",
+        "rationale": "A nonproduction release lets the developer inspect behavior before exposing a change to users.",
+        "applies_when": "The developer has not specified a deployment target, or production readiness is unconfirmed.",
+        "exceptions": [
+          "Honor an explicit preview or staging target; a production recommendation also requires confirmed nonproduction verification."
+        ]
+      },
+      {
+        "rule_id": "deployment.production_readiness",
+        "source": "content/deployment.json",
+        "source_field": "/rules/1/value",
+        "content_revision": "c0bd76810c315ed7e98e2c8eccc5256f51f2a6b7757ca8e73d082a1d68938c87",
+        "mechanism": "constraint",
+        "decision_basis": "constraint",
+        "configured_value": "confirm_nonproduction_verification",
+        "applied_value": "confirm_nonproduction_verification",
+        "recommendation": "Before recommending production, ask whether this change has been verified in a nonproduction environment.",
+        "rationale": "A request to ship does not establish that the change was exercised outside production. User confirmation informs this advice; it is not independent release validation.",
+        "applies_when": "The requested or default target is production.",
+        "exceptions": [
+          "When the developer confirms verification, offer production as the next step while noting that team release requirements still apply."
+        ]
+      }
+    ],
+    "next_action": "Confirm nonproduction verification before considering production.",
+    "executes_deployment": false
+  },
+  "checks": [
+    "guide discovery",
+    "content-only practice edit and fresh descriptions",
+    "hidden answers and explicit reveal",
+    "explicit count override",
+    "shortage",
+    "wrapper fidelity including numeric and null values",
+    "standalone deployment edit",
+    "production readiness question"
+  ]
+}

@@ -1,6 +1,6 @@
 # Using the Jeopardy JSON → FastAPI → MCP Server
 
-This guide explains how to install, start, verify, and use the reference server. It also explains why you might put a server in front of a JSON file instead of giving an application or AI agent direct access to the file.
+This guide explains the manually managed API and wrapper for infrastructure study. For the attendee path, use the [root quickstart](../README.md), which starts the API automatically through the editor launcher. This page also explains why you might put a server in front of a JSON file instead of giving an application or AI agent direct access to the file.
 
 ## What runs locally
 
@@ -112,15 +112,15 @@ Useful response behavior:
 
 Open the `JSON-API-MCP` directory as the VS Code workspace. This is important because the MCP configuration uses `${workspaceFolder}`.
 
-The included `.vscode/mcp.json` tells VS Code to launch:
+The included `.vscode/mcp.json` tells VS Code to launch the wrapper and its private API together:
 
 ```bash
-uv run --locked python -m jeopardy_template.mcp_server
+uv run --locked python -m jeopardy_template.launcher --server wrapper
 ```
 
 To use it:
 
-1. Keep FastAPI running in the first terminal.
+1. The launcher manages the API. Keep the manual FastAPI terminal only for the curl commands and original standalone smoke test.
 2. Open VS Code’s MCP server list.
 3. Start `jeopardy-basics` if it is not already running.
 4. Open GitHub Copilot Chat in agent mode.
@@ -166,7 +166,7 @@ Press `Ctrl+C` in the terminal running Uvicorn. VS Code manages the MCP subproce
 
 ### The MCP tool reports that the API is unavailable
 
-The two-process architecture means starting the MCP server does not start FastAPI. Run Uvicorn in a separate terminal and verify `/health` before trying the tool again.
+The direct `jeopardy_template.mcp_server` module expects a separately managed API. Run Uvicorn and verify `/health`, or use the configured `jeopardy_template.launcher --server wrapper`, which manages API readiness and startup for you.
 
 ### VS Code cannot find `uv`
 

@@ -2,7 +2,7 @@
 
 Build a small, repeatable data pipeline that turns JSON into a typed FastAPI API and then exposes that API to GitHub Copilot through an MCP server.
 
-This is Part 1 of **Goodbye, Tutorial Hell: AI Guides and the New Documentation Layer**. It deliberately builds a thin, correct MCP wrapper first. In Part 2, the same project will become an opinionated AI Guide so you can see the difference between giving an agent access and giving it judgment.
+This is the infrastructure background for **Goodbye, Tutorial Hell: AI Guides and the New Documentation Layer**. The working guide and attendee path are in the [root quickstart](../README.md), [exercise](../EXERCISE.md), and [deployment takeaway](../TAKEAWAY.md). This page explains the thin wrapper and manual API workflow.
 
 For the complete teaching sequence—including the wrapper’s intentional failure case and the transition to a task-focused guide—see the [full workshop tutorial](../TUTORIAL.md).
 
@@ -95,7 +95,7 @@ FastAPI returns `404` for an unknown clue ID and `422` for invalid query paramet
 
 ## Step 4: connect the MCP server
 
-Keep FastAPI running. The MCP process is separate and talks to the API at `http://127.0.0.1:8000`.
+The included editor launcher manages a private local API automatically. Keep the manual FastAPI process running only if you are also trying the curl commands or the original standalone smoke test.
 
 This repository includes `.vscode/mcp.json`. In VS Code:
 
@@ -104,7 +104,7 @@ This repository includes `.vscode/mcp.json`. In VS Code:
 3. Open Copilot Chat in agent mode and confirm the three Jeopardy tools appear.
 4. Ask: **“Find two Developer Tools clues and retrieve the first one.”**
 
-The MCP host launches `uv run --locked python -m jeopardy_template.mcp_server`. The server uses stdio, so do not print to stdout from `mcp_server.py`; stdout carries protocol messages. Application logging goes to stderr.
+The MCP host launches `uv run --locked python -m jeopardy_template.launcher --server wrapper`. To use a separately managed API, the original `python -m jeopardy_template.mcp_server` entry point remains available. The server uses stdio, so do not print to stdout; application logging goes to stderr.
 
 If VS Code cannot find `uv`, replace `"uv"` in `.vscode/mcp.json` with the absolute path printed by `which uv` (macOS/Linux) or `where uv` (Windows).
 
@@ -165,12 +165,12 @@ Work through the [dataset adaptation exercise](ADAPTATION_EXERCISE.md) for a gui
 
 This baseline does not implement gameplay, scoring, answer grading, writes, accounts, vector search, remote MCP hosting, or authentication. It also returns answers, so it is not a spoiler-safe quiz guide.
 
-Part 2 will add a task-focused tool that hides answers by default, explains strategic choices, and pushes back on poor requests. That is the shift from an API wrapper to an AI Guide.
+The implemented guide in `guide_server.py` hides answers in practice results, explains its defaults, and identifies the source rules. The standalone deployment example asks about missing verification before recommending production. Follow the [attendee exercise](../EXERCISE.md) and [takeaway](../TAKEAWAY.md) to compare and edit their guidance.
 
 ## Troubleshooting
 
 - **The MCP tools fail with “API unavailable.”** Start Uvicorn in a separate terminal and check `/health`.
-- **VS Code shows no tools.** Confirm you opened the repository root, trust the workspace, and start `jeopardy-basics` from the MCP server list.
+- **VS Code shows no wrapper tools.** Open `JSON-API-MCP` as the workspace, trust it, and start `jeopardy-basics`. The repository root configuration instead provides `education-guide`.
 - **`uv` is not found by VS Code.** Use its absolute path in `.vscode/mcp.json`.
 - **The dataset fails to load.** Run `scripts/check_setup.py`; the error includes the record index and validation problem.
 - **A full import is slow or memory-heavy.** The tutorial is optimized for a bounded sample. Benchmark before replacing the repository with SQLite for the full archive.

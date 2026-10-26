@@ -1,0 +1,9 @@
+{
+  "servers": {
+    "my-product-guide": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "--locked", "--directory", "${workspaceFolder}", "python", "server.py"]
+    }
+  }
+}

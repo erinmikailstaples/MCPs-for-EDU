@@ -2,6 +2,8 @@
 
 The goal is to change the domain without rewriting the MCP transport plumbing. Use a small, synthetic fixture from your own domain so the feedback loop stays fast.
 
+For a content-first product example that already runs without the dataset API, begin with the [deployment takeaway](../TAKEAWAY.md). This exercise covers the deeper data/API adaptation.
+
 ## 1. Define one record
 
 Write down the smallest useful record your users need. Identify:
@@ -25,7 +27,7 @@ Change the routes and response models in `api.py`, then make the matching change
 
 Replace the three functions in `mcp_server.py`. Tool names and descriptions should describe what a user is trying to accomplish, not merely repeat internal function or endpoint names.
 
-For Part 1, keep them as thin mappings so you have a baseline. In Part 2, add a preferred default, an anti-pattern, and a worked example to one tool description and compare agent behavior.
+Keep the wrapper as a thin mapping for comparison. The implemented `guide_server.py` uses `content/*.json` for defaults, anti-patterns, rationale, and worked examples. Adapt the relevant task contract and handler as well as its content, then verify the new recommendation through MCP.
 
 ## 5. Prove the path
 

@@ -1,0 +1,43 @@
+{
+  "task": "practice",
+  "title": "Build a useful practice round",
+  "use_when": "The learner wants to practice, study, or be quizzed. Retrieve this guidance when choosing a practice approach.",
+  "rules": [
+    {
+      "id": "practice.default_count",
+      "mechanism": "default",
+      "value": 2,
+      "recommendation": "Start with {value} clues when the learner does not specify a count.",
+      "rationale": "A short round leaves time to review mistakes before continuing.",
+      "applies_when": "The learner requests a practice round without a count.",
+      "exceptions": ["Honor an explicit count from 1 to 10; disclose when fewer matching clues exist."],
+      "avoid": "Filling a round with unrelated clues to meet the requested count.",
+      "example_request": "Give me a beginner practice round in Developer Tools.",
+      "example_behavior": "Recommend {value} clues, hide answers, and explain the short-round default."
+    },
+    {
+      "id": "practice.answer_visibility",
+      "mechanism": "constraint",
+      "value": "on_request",
+      "recommendation": "Keep answers out of practice results; reveal a specific answer only when asked.",
+      "rationale": "The learner needs an opportunity to attempt the clue before seeing its answer.",
+      "applies_when": "Building any practice set.",
+      "exceptions": ["Use reveal_answer when the learner explicitly asks for an answer."],
+      "avoid": "Returning raw API search results that contain answers as a practice set.",
+      "example_request": "Quiz me on developer tools.",
+      "example_behavior": "Return prompts and IDs; offer to reveal an answer after an attempt."
+    },
+    {
+      "id": "practice.difficulty",
+      "mechanism": "advisory",
+      "value": "board_value_proxy",
+      "recommendation": "Use lower board values first for beginner practice and higher values first for advanced practice, while disclosing this rough proxy.",
+      "rationale": "Board value provides a reproducible ordering, but does not measure universal conceptual difficulty or the learner's knowledge.",
+      "applies_when": "Choosing a progression within the matching clues.",
+      "exceptions": ["Ask about the learner's topic or goal when they require conceptual difficulty; Final Jeopardy has no fixed board value and is placed last."],
+      "avoid": "Claiming that the highest-value clue is objectively the hardest for everyone.",
+      "example_request": "Find the objectively hardest material so I can master it.",
+      "example_behavior": "Explain the proxy's limit and ask which concepts the learner wants to improve."
+    }
+  ]
+}

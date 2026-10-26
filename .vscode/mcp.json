@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "education-guide": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run", "--locked", "--directory", "${workspaceFolder}/JSON-API-MCP",
+        "python", "-m", "jeopardy_template.launcher", "--server", "guide"
+      ]
+    }
+  }
+}

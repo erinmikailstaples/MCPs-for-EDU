@@ -1,0 +1,72 @@
+{
+  "verified_at": "2026-10-26T18:04:42.918733+00:00",
+  "python_version": "3.12.15",
+  "scope": "Copied server outside workshop; real stdio clients; no editor/model tested",
+  "implementation_revision": "92b09dc88c86d58e602d0c10efa027e9a768648e93e0bccf59ac936e977546f1",
+  "before": {
+    "task_id": "deploy",
+    "requested_choice": null,
+    "recommended_choice": "preview",
+    "recommendation": "Try the change in an isolated preview environment.",
+    "rationale": "A preview lets you inspect the change before exposing it to users.",
+    "decision_basis": "default",
+    "unmet_requirements": [],
+    "guidance_sources": [
+      {
+        "file": "context/guide.json",
+        "pointer": "/tasks/0/default_choice",
+        "revision": "03096fcfb9c679f2e79408e920d94043e2eecbd020f03284495d8172d83c0cfd"
+      },
+      {
+        "file": "context/guide.json",
+        "pointer": "/tasks/0/choices/0",
+        "revision": "03096fcfb9c679f2e79408e920d94043e2eecbd020f03284495d8172d83c0cfd"
+      }
+    ],
+    "reference_sources": [
+      {
+        "file": "context/product.md",
+        "pointer": "",
+        "revision": "f118f6f7ed4557ea623ef71aa119cccb139f8c560994bc7de31692b570f5011b"
+      }
+    ],
+    "advisory_only": true
+  },
+  "after": {
+    "task_id": "deploy",
+    "requested_choice": null,
+    "recommended_choice": "staging",
+    "recommendation": "Try the change in your team's staging environment.",
+    "rationale": "Staging provides a shared nonproduction place to check integration behavior.",
+    "decision_basis": "default",
+    "unmet_requirements": [],
+    "guidance_sources": [
+      {
+        "file": "context/guide.json",
+        "pointer": "/tasks/0/default_choice",
+        "revision": "a467f68276aba0534eff7b6a29b307c32ea99d7f0b568a1211bb315314b6b1c0"
+      },
+      {
+        "file": "context/guide.json",
+        "pointer": "/tasks/0/choices/1",
+        "revision": "a467f68276aba0534eff7b6a29b307c32ea99d7f0b568a1211bb315314b6b1c0"
+      }
+    ],
+    "reference_sources": [
+      {
+        "file": "context/product.md",
+        "pointer": "",
+        "revision": "f118f6f7ed4557ea623ef71aa119cccb139f8c560994bc7de31692b570f5011b"
+      }
+    ],
+    "advisory_only": true
+  },
+  "checks": [
+    "standalone copy",
+    "task discovery",
+    "reference documents",
+    "context-only default edit",
+    "refreshed tool descriptions",
+    "additional task without Python changes"
+  ]
+}

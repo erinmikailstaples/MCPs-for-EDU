@@ -4,10 +4,14 @@ on:
   push:
     paths:
       - "JSON-API-MCP/**"
+      - ".vscode/**"
+      - ".devcontainer/**"
       - ".github/workflows/json-api-mcp.yml"
   pull_request:
     paths:
       - "JSON-API-MCP/**"
+      - ".vscode/**"
+      - ".devcontainer/**"
       - ".github/workflows/json-api-mcp.yml"
 
 jobs:
@@ -27,6 +31,9 @@ jobs:
       - run: uv sync --locked
       - run: uv run --locked ruff check .
       - run: uv run --locked pytest
+      - run: uv run --locked python scripts/render_guidance.py --check
+      - name: Guidance edits through real MCP subprocesses
+        run: uv run --locked python scripts/verify_workshop.py
       - name: Protocol smoke test
         run: |
           uv run --locked uvicorn jeopardy_template.api:app --host 127.0.0.1 --port 8000 >api.log 2>&1 &

@@ -1,0 +1,31 @@
+{
+  "task": "deployment",
+  "title": "Recommend the next deployment step",
+  "use_when": "The developer asks where to deploy next or proposes a first production release. This example provides advice and never performs a deployment.",
+  "rules": [
+    {
+      "id": "deployment.default_environment",
+      "mechanism": "default",
+      "value": "preview",
+      "recommendation": "Recommend {value} when the developer has not selected an environment.",
+      "rationale": "A nonproduction release lets the developer inspect behavior before exposing a change to users.",
+      "applies_when": "The developer has not specified a deployment target, or production readiness is unconfirmed.",
+      "exceptions": ["Honor an explicit preview or staging target; a production recommendation also requires confirmed nonproduction verification."],
+      "avoid": "Assuming that a successful build establishes production readiness.",
+      "example_request": "Recommend my next deployment step.",
+      "example_behavior": "Recommend {value}, explain the rationale, and identify this source rule."
+    },
+    {
+      "id": "deployment.production_readiness",
+      "mechanism": "constraint",
+      "value": "confirm_nonproduction_verification",
+      "recommendation": "Before recommending production, ask whether this change has been verified in a nonproduction environment.",
+      "rationale": "A request to ship does not establish that the change was exercised outside production. User confirmation informs this advice; it is not independent release validation.",
+      "applies_when": "The requested or default target is production.",
+      "exceptions": ["When the developer confirms verification, offer production as the next step while noting that team release requirements still apply."],
+      "avoid": "Inventing test results or claiming that this advisory tool authorizes a release.",
+      "example_request": "Skip preview and ship straight to production.",
+      "example_behavior": "Ask whether the change has been verified outside production and recommend a nonproduction step until that is confirmed."
+    }
+  ]
+}

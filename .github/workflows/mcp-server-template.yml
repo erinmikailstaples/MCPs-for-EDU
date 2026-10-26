@@ -1,0 +1,30 @@
+name: Standalone MCP template
+
+on:
+  push:
+    paths:
+      - "mcp-server-template/**"
+      - ".github/workflows/mcp-server-template.yml"
+  pull_request:
+    paths:
+      - "mcp-server-template/**"
+      - ".github/workflows/mcp-server-template.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mcp-server-template
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync --locked
+      - run: uv run --locked ruff check .
+      - run: uv run --locked pytest
+      - run: uv run --locked python server.py --check
+      - run: uv run --locked python render_context.py --check
+      - run: uv run --locked python verify.py
