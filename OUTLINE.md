@@ -8,7 +8,7 @@
 
 ## Original prospectus
 
-For years, "developer education" has meant read the docs and hope. And most MCP servers are just API wrappers with extra steps. What if the server could teach instead? When an AI agent in GitHub Copilot or another MCP-compatible editor reads documentation through an opinionated MCP server, it stops giving generic advice and starts teaching the way your product is meant to be used. Janice Niemeir  and Erin Mikail Staples show the difference live: you'll fork an open source reference server, install it in your editor, and watch agent behavior change side by side. You'll leave with a working scaffold you can adapt for your own product or codebase.
+For years, "developer education" has meant read the docs and hope. And most MCP servers are just API wrappers with extra steps. What if the server could teach instead? When an AI agent in GitHub Copilot or another MCP-compatible editor reads documentation through an opinionated MCP server, it stops giving generic advice and starts teaching the way your product is meant to be used. Janice Niemeir and Erin Mikail Staples show the difference live: you'll fork an open source reference server, install it in your editor, and watch agent behavior change side by side. You'll leave with a working scaffold you can adapt for your own product or codebase.
 
 ## Acceptance criterion
 

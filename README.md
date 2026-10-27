@@ -1,6 +1,6 @@
 # Goodbye, Tutorial Hell: AI Guides and the New Documentation Layer
 
-**A 45-minute GitHub Universe workshop with Claire Waters and Erin Mikail Staples.**
+**A 45-minute GitHub Universe workshop with Janice Niemeir and Erin Mikail Staples.**
 
 A tutorial can get a developer to a first success. Their own project brings new choices: which option to use, what to avoid, and when to ask for more information. This workshop shows how an opinionated MCP server can bring documented product judgment into the editor while a developer works.
 
@@ -29,9 +29,24 @@ The timed parts total 45 minutes. [OUTLINE.md](OUTLINE.md) contains the session 
 
 ## Start in your editor
 
-You need a GitHub account, VS Code with GitHub Copilot agent mode available, Python 3.12 or newer, and [uv](https://docs.astral.sh/uv/getting-started/installation/).
+### Requirements for the local workshop
 
+Prepare these before the session:
 
+| Requirement | What you need it for |
+|---|---|
+| GitHub account with access to GitHub Copilot Chat | Fork the repository and use Copilot in **Agent** mode. Sign in before the workshop. |
+| VS Code with MCP support and Copilot Chat available | Start the checked-in MCP server and call its tools from Chat. If your organization manages these features, confirm that MCP servers and agent tools are enabled. |
+| Git | Clone your fork using the commands below. |
+| Python 3.12 or newer | Run the workshop server and the standalone takeaway template. Both projects declare this requirement in `pyproject.toml`. |
+| [uv](https://docs.astral.sh/uv/getting-started/installation/) | Install the locked Python dependencies and launch the server. Make sure `uv` is available to VS Code as well as your terminal. |
+| Internet access | Download dependencies and use GitHub Copilot during the exercises. |
+
+Basic familiarity with opening a project and running terminal commands is helpful. The walkthrough explains MCP setup, and the first exercise edits a JSON value rather than Python code. The repository includes synthetic clue data and starts its local API with the MCP server; no database or external trivia API account is required.
+
+Attendees need **one VS Code window opened at the repository root** for `education-guide`. To reproduce the presenter comparison, use a second window opened at `JSON-API-MCP` for `jeopardy-basics`, and choose the same named model in both windows. See [the comparison setup](#2-compare-a-wrapper-and-a-guide).
+
+**Codespaces alternative:** You need GitHub and Copilot access plus a Codespace for your fork. The checked-in devcontainer supplies Python 3.12, installs uv, and installs the project dependencies. Run the setup check after it opens. The current validation status for this path is linked below.
 
 ### Fork and open the repository
 
@@ -67,7 +82,7 @@ setup ready: 6 clues, synthetic-workshop-v1
 
 1. Open the Command Palette and run **MCP: List Servers**.
 2. Select **education-guide**, then **Start Server**.
-3. Open Copilot Chat in **Agent** mode and inspect **Configure Tools**. Confirm these tools are available:
+3. Open Copilot Chat in **Agent** mode. In a Local harness session, use **Configure Tools**; for the Copilot harness, run **Chat: Open Customizations** and open **Tools**. Confirm these tools are available:
 
    - `get_guidance`
    - `build_practice_set`
@@ -81,6 +96,8 @@ setup ready: 6 clues, synthetic-workshop-v1
 Use only this server's tools for the guide exercise. Tool selection can apply across chats in the tested VS Code setup, so check it again when switching windows or restore your usual selection afterward.
 
 The included configuration starts the clue API and MCP server together. You do not need to launch FastAPI separately or manage a second terminal. The guide is ready when VS Code reports four discovered tools.
+
+The earlier `setup ready` output checks the environment and bundled data; starting the MCP server is a separate step. See the [presenter setup toggle](UNIVERSE-OUTLINE.md#comparison-startup) for detailed startup instructions, preflight prompts, and common pitfalls.
 
 ## 1 Why developer education needs judgment
 

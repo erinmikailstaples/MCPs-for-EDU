@@ -76,7 +76,11 @@ In this workshop, we will build and inspect that connection. A small trivia appl
 
 ### 🛠️ Install, open both windows, and start the servers
 
-**📝 Presenter note:** Prepare both servers before the session. The seven-minute comparison begins with working connections. Attendees only need Window B for their exercise.
+**📝 Presenter note:** Prepare both servers before the session. The six-minute comparison begins with working connections. Attendees only need Window B for their exercise.
+
+**📝 Prerequisites:** Install VS Code with GitHub Copilot access, Python 3.12 or newer, and [uv](https://docs.astral.sh/uv/getting-started/installation/). If you have not downloaded the project, follow [fork and open the repository](README.md#fork-and-open-the-repository). These instructions use a local checkout; the [verification record](evidence/README.md) distinguishes the tested local setup from the Codespaces path.
+
+**📝 Rehearsal preparation:** Use [DEMO.md](DEMO.md) to record the model, settings, prompts, and observed results. Prepare fallback screenshots or a recording from an actual verified run and identify it as recorded if used.
 
 **🖱️ Do — 1. Open Window B at the repository root:** In VS Code, choose **File → Open Folder…** and select the folder containing `README.md`, `UNIVERSE-OUTLINE.md`, and `JSON-API-MCP`. In this checkout that folder is `Github-Universe-26`; your fork may have another name. Keep this window open.
 
@@ -188,13 +192,13 @@ Then reopen the Command Palette, run **MCP: List Servers**, select `education-gu
 
 </details>
 
-## Before the session: welcome and presenter preparation
+## Before the session: welcome
 
 ### 🖥️ Screen 02 — arrival
 
 **🖥️ On screen:** Show the session title, both speakers' names, and the repository URL with a QR code to its quickstart. Add one instruction: “Fork the repo and open the README.” Leave this up while people arrive.
 
-**🖱️ Do:** Put the [repository](https://github.com/erinmikailstaples/MCPs-for-EDU) and [quickstart](README.md#start-in-your-editor) on screen as people arrive. Invite them to fork and clone, or create a Codespace from their fork. Follow the setup above for the local demo. Use [DEMO.md](DEMO.md) to record the model, editor settings, prompts, and observed results. Prepare screenshots or a recording from an actual verified run and identify it as recorded if used.
+**🖱️ Do:** Put the [repository](https://github.com/erinmikailstaples/MCPs-for-EDU) and [quickstart](README.md#start-in-your-editor) on screen as people arrive. Invite them to fork and clone, or create a Codespace from their fork. Keep the setup toggle available for anyone following the local path.
 
 **🎤 Talk track — say while people arrive:**
 
