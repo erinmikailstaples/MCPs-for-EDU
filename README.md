@@ -17,15 +17,15 @@ Read this page in order to follow the session independently. During the live tal
 | Part | Time | What you will learn or do |
 |---|---:|---|
 | [Before the session: setup](#start-in-your-editor) | Before the clock | Fork the scaffold and prepare the editor. |
-| [1. Why developer education needs judgment](#1-why-developer-education-needs-judgment) | 5 min | Identify the decisions a tutorial leaves to its reader. |
-| [2. Compare a wrapper and a guide](#2-compare-a-wrapper-and-a-guide) | 7 min | Inspect what the server supplies and what the model infers. |
+| [1. Why developer education needs judgment](#1-why-developer-education-needs-judgment) | 9 min | Understand the learning environment, MCP, and the theory behind the exercise. |
+| [2. Compare a wrapper and a guide](#2-compare-a-wrapper-and-a-guide) | 6 min | Inspect what the server supplies and what the model infers. |
 | [3. Learn from pg-aiguide and trace a recommendation](#3-learn-from-pg-aiguide-and-trace-a-recommendation) | 6 min | Connect product advice to its source and rationale. |
-| [4. Run your own guide](#4-run-your-own-guide) | 8 min | Confirm your installation and retrieve a practice round. |
+| [4. Run your own guide](#4-run-your-own-guide) | 7 min | Confirm your installation and retrieve a practice round. |
 | [5. Edit guidance and observe the change](#5-edit-guidance-and-observe-the-change) | 6 min | Change two clues to three and inspect the result. |
 | [6. Take away a product example](#6-take-away-a-product-example) | 5 min | Change a deployment recommendation and apply the pattern elsewhere. |
-| [7. Explain what you learned](#7-explain-what-you-learned) | 8 min | Discuss tradeoffs, recover from setup issues, and identify your next use case. |
+| [7. Explain what you learned](#7-explain-what-you-learned) | 6 min | Discuss tradeoffs, recover from setup issues, and identify your next use case. |
 
-The timed parts total 45 minutes. [OUTLINE.md](OUTLINE.md) contains presenter notes; this README contains the attendee walkthrough.
+The timed parts total 45 minutes. [OUTLINE.md](OUTLINE.md) contains the session outline, and [UNIVERSE-OUTLINE.md](UNIVERSE-OUTLINE.md) contains the theory, screen cues, and expanded presenter notes; this README contains the attendee walkthrough.
 
 ## Start in your editor
 

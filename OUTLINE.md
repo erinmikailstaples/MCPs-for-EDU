@@ -20,13 +20,13 @@ The exercise uses Jeopardy practice to make the first change easy to inspect. Th
 
 | Block | Minutes | Running total |
 |---|---:|---:|
-| 1. Developer education problem and session promise | 5 | 5 |
-| 2. Wrapper and guide comparison | 7 | 12 |
-| 3. What we learned and tracing a recommendation | 6 | 18 |
-| 4. Fork, install, and verify | 8 | 26 |
-| 5. Edit guidance, restart, and observe | 6 | 32 |
-| 6. Adapt the pattern to a product | 5 | 37 |
-| 7. Questions, recovery time, and leave-behinds | 8 | 45 |
+| 1. Learning environment, MCP foundations, and session promise | 9 | 9 |
+| 2. Wrapper and guide comparison | 6 | 15 |
+| 3. pg-aiguide in practice and tracing a recommendation | 6 | 21 |
+| 4. Fork, install, and verify | 7 | 28 |
+| 5. Edit guidance, restart, and observe | 6 | 34 |
+| 6. Adapt the pattern to a product | 5 | 39 |
+| 7. Questions, recovery time, and leave-behinds | 6 | 45 |
 
 ## Before the session
 
@@ -37,6 +37,10 @@ The exercise uses Jeopardy practice to make the first change easy to inspect. Th
 
 ## 1 Developer education problem and session promise
 
+- Define the learning environment and its principles before the demo: context that fits the task, inspectable reasoning, bounded practice, and records that can be revisited.
+- Explain MCP's host, client, and server roles, tool discovery and calls, and how tools, resources, and prompts can expose documentation. Map those ideas to the local launcher and guide.
+- Use Microsoft Learn, Mintlify, Stripe, and pg-aiguide as sourced examples of documentation delivered through MCP.
+- Introduce cognitive apprenticeship, situated and experiential learning, cognitive load, self-explanation, and retrieval practice. Connect each to a specific workshop activity. The expanded explanations and sources are in [UNIVERSE-OUTLINE.md](UNIVERSE-OUTLINE.md).
 - A tutorial can get you to a first success. Your own project introduces choices the tutorial never made for you.
 - Product judgment already appears in support answers, onboarding, and code review. Make that advice available while the developer is doing the task.
 - Promise the concrete loop: find the recommendation, inspect the rule, edit it, rerun, and adapt the pattern.
