@@ -31,6 +31,8 @@ The timed parts total 45 minutes. [OUTLINE.md](OUTLINE.md) contains presenter no
 
 You need a GitHub account, VS Code with GitHub Copilot agent mode available, Python 3.12 or newer, and [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
+
+
 ### Fork and open the repository
 
 1. Fork [MCPs-for-EDU](https://github.com/erinmikailstaples/MCPs-for-EDU) into your GitHub account.
@@ -71,6 +73,10 @@ setup ready: 6 clues, synthetic-workshop-v1
    - `build_practice_set`
    - `reveal_answer`
    - `recommend_deployment`
+
+   Alternatively, from within the copilot chat interface, run `#` and ask it to list tools. You will see tools listed from your mcp.json configuration.
+
+   https://cln.sh/3KCQCvT1 
 
 Use only this server's tools for the guide exercise. Tool selection can apply across chats in the tested VS Code setup, so check it again when switching windows or restore your usual selection afterward.
 
