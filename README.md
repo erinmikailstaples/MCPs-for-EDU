@@ -82,7 +82,8 @@ setup ready: 6 clues, synthetic-workshop-v1
 
 1. Open the Command Palette and run **MCP: List Servers**.
 2. Select **education-guide**, then **Start Server**.
-3. Open Copilot Chat in **Agent** mode. In a Local harness session, use **Configure Tools**; for the Copilot harness, run **Chat: Open Customizations** and open **Tools**. Confirm these tools are available:
+3. Open Copilot Chat in **Agent** mode.
+4. Open the Command Palette. In a Local harness session, use **Configure Tools**; for the Copilot harness, run **Chat: Open Customizations** and open **Tools**. Confirm these tools are available:
 
    - `get_guidance`
    - `build_practice_set`
